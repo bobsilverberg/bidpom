@@ -96,21 +96,3 @@ class TestSignIn(BaseTest):
 
         WebDriverWait(mozwebqa.selenium, mozwebqa.timeout).until(
             lambda s: s.find_element_by_id('loggedin').is_displayed())
-
-    def test_sign_in_is_this_your_computer_without_delay(self, mozwebqa):
-        browser_id = BrowserID(mozwebqa.selenium, mozwebqa.timeout)
-        browser_id.sign_in(mozwebqa.email, mozwebqa.password)
-
-        WebDriverWait(mozwebqa.selenium, mozwebqa.timeout).until(
-            lambda s: s.find_element_by_id('loggedin').is_displayed())
-
-        self.log_out(mozwebqa.selenium, mozwebqa.timeout)
-
-        mozwebqa.selenium.find_element_by_css_selector('#loggedout button').click()
-
-        from .. pages.sign_in import SignIn
-        signin = SignIn(mozwebqa.selenium, mozwebqa.timeout, expect='returning')
-        signin.click_sign_in_returning_user(expect='remember')
-
-        WebDriverWait(mozwebqa.selenium, mozwebqa.timeout).until(
-            lambda s: s.find_element_by_id('loggedin').is_displayed())
