@@ -10,7 +10,7 @@ except (OSError, IOError):
 
 version = '1.0'
 
-setup(name='bidpom',
+setup(name='browserid',
       version=version,
       description="Mozilla BrowserID (Persona) Page Object Model",
       long_description=description,
@@ -20,6 +20,6 @@ setup(name='bidpom',
       author_email='mozwebqa@mozilla.org',
       url='https://github.com/mozilla/bidpom',
       license='MPL 2.0',
-      packages=['bidpom', 'bidpom.pages'],
+      packages=['browserid', 'browserid.pages'],
       include_package_data=True,
       )
