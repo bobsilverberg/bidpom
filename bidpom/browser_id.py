@@ -4,8 +4,6 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import selenium
-
 
 class BrowserID(object):
 
@@ -20,6 +18,6 @@ class BrowserID(object):
 
     def sign_in(self, email, password):
         """Signs in using the specified email address and password."""
-        from pages.sign_in import SignIn
+        from bidpom.pages.sign_in import SignIn
         sign_in = SignIn(self.selenium, timeout=self.timeout, expect='new')
         sign_in.sign_in(email, password)
